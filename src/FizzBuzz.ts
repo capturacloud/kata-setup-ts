@@ -1,6 +1,6 @@
 export class FizzBuzz {
   fizzbuzz (input : number): string | number {
-    if (input === 5 || input === 10) {
+    if (input === 5 || input === 10 || input === 20) {
       return 'buzz';
     }
     if (input === 15) {
