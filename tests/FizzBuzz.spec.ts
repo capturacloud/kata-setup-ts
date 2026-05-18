@@ -21,23 +21,8 @@ it('should return fizzbuzz when 15 given', () => {
 
 });
 
-it('should return 1 when 1 given', () => {
+it.each([1, 2, 43]) (`should return the given number (%i) when not a multiple of 3 or 5` , (input) => {
   const fizzbuzz = new FizzBuzz();
 
-  expect(fizzbuzz.fizzbuzz(1)).toBe(1);
-
-});
-
-it('should return 2 when 2 given', () => {
-  const fizzbuzz = new FizzBuzz();
-
-  expect(fizzbuzz.fizzbuzz(2)).toBe(2);
-
-});
-
-it('should return 43 when 43 given', () => {
-  const fizzbuzz = new FizzBuzz();
-
-  expect(fizzbuzz.fizzbuzz(43)).toBe(43);
-
-});
+  expect(fizzbuzz.fizzbuzz(input)).toBe(input);
+})
