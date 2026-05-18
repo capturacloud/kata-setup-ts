@@ -1,6 +1,6 @@
 export class LeapYear {
   leapYear (input : number): boolean {
-    if (input === 1996 || input === 1992) {
+    if (input % 4 === 0) {
       return true;
     }
     return false;
