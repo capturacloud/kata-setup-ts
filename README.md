@@ -1,5 +1,10 @@
 # TypeScript Kata Setup
 
+Base repository for the CapturaCloud development team to practice katas in TypeScript.
+
+The project includes a minimal TypeScript and Vitest setup so developers can start programming exercises quickly
+while keeping the focus on design, refactoring, and test-driven evolution.
+
 ## Installation
 
 You’ll need **NVM** and **npm** installed on your system. The required Node.js version is specified in the
@@ -20,5 +25,5 @@ npm ci
 ### Run tests
 
 ```bash
-npm run tests
+npm run test
 ```
