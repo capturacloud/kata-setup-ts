@@ -6,7 +6,7 @@ export class FizzBuzz {
     if (input === 15) {
       return 'fizzbuzz';
     }
-    if (input === 3 || input === 6 || input === 42) {
+    if (input % 3 === 0) {
       return 'fizz';
     }
     return input;
