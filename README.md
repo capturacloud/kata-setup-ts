@@ -19,7 +19,7 @@ You’ll need **NVM** and **npm** installed on your system. The required Node.js
 ### Install dependencies:
 
 ```bash
-npm ci
+npm install
 ```
 
 ### Run tests
