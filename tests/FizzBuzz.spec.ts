@@ -13,6 +13,13 @@ it('should return buzz when 5 given', () => {
 
 });
 
+it('should return buzz when 10 given', () => {
+  const fizzbuzz = new FizzBuzz();
+
+  expect(fizzbuzz.fizzbuzz(10)).toBe('buzz');
+
+});
+
 it('should return fizzbuzz when 15 given', () => {
   const fizzbuzz = new FizzBuzz();
 
