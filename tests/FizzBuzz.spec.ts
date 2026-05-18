@@ -7,6 +7,13 @@ it('should return fizz when 3 given', () => {
 
 });
 
+it('should return fizz when 6 given', () => {
+  const fizzbuzz = new FizzBuzz();
+
+  expect(fizzbuzz.fizzbuzz(6)).toBe('fizz');
+
+});
+
 it('should return buzz when 5 given', () => {
   const fizzbuzz = new FizzBuzz();
 
