@@ -35,4 +35,9 @@ it('should return 2 when 2 given', () => {
 
 });
 
+it('should return 43 when 43 given', () => {
+  const fizzbuzz = new FizzBuzz();
 
+  expect(fizzbuzz.fizzbuzz(43)).toBe(43);
+
+});
