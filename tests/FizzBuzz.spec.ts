@@ -1,25 +1,10 @@
 import { FizzBuzz } from '@/FizzBuzz'
 
-it('should return fizz when 3 given', () => {
+it.each([3, 6, 42]) (`should return fizz when input is a multiple of 3 (%i)` , (input) => {
   const fizzbuzz = new FizzBuzz();
 
-  expect(fizzbuzz.fizzbuzz(3)).toBe('fizz');
-
-});
-
-it('should return fizz when 6 given', () => {
-  const fizzbuzz = new FizzBuzz();
-
-  expect(fizzbuzz.fizzbuzz(6)).toBe('fizz');
-
-});
-
-it('should return fizz when 42 given', () => {
-  const fizzbuzz = new FizzBuzz();
-
-  expect(fizzbuzz.fizzbuzz(42)).toBe('fizz');
-
-});
+  expect(fizzbuzz.fizzbuzz(input)).toBe('fizz');
+})
 
 it('should return buzz when 5 given', () => {
   const fizzbuzz = new FizzBuzz();
