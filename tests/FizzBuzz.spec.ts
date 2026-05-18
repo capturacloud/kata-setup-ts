@@ -28,4 +28,11 @@ it('should return 1 when 1 given', () => {
 
 });
 
+it('should return 2 when 2 given', () => {
+  const fizzbuzz = new FizzBuzz();
+
+  expect(fizzbuzz.fizzbuzz(2)).toBe(2);
+
+});
+
 
