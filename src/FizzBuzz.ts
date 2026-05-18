@@ -6,9 +6,9 @@ export class FizzBuzz {
     if (input === 15) {
       return 'fizzbuzz';
     }
-    if (input === 1 || input === 2 || input === 43) {
-      return input;
+    if (input === 3) {
+      return 'fizz';
     }
-    return 'fizz';
+    return input;
   }
 }
