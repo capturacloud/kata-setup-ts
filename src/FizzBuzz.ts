@@ -1,5 +1,5 @@
 export class FizzBuzz {
-  fizzbuzz (): boolean {
-    return true;
+  fizzbuzz (input : number): string {
+    return 'fizz';
   }
 }
