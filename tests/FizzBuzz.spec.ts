@@ -1,0 +1,7 @@
+import { FizzBuzz } from '@/FizzBuzz'
+
+it('should return fizz when 3 given', () => {
+  const fizzbuzz = new FizzBuzz();
+
+  expect(fizzbuzz.fizzbuzz(3)).toBe('fizz');
+});
