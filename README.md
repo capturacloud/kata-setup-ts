@@ -20,5 +20,5 @@ npm ci
 ### Run tests
 
 ```bash
-npm run test
+npm run tests
 ```

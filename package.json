@@ -1,0 +1,19 @@
+{
+  "name": "kata-setup-ts",
+  "license": "MIT",
+  "author": "CapturaCloud <devs@capturacloud.com>",
+  "directories": {
+    "lib": "src",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "tsc && vitest"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.6"
+  }
+}
