@@ -7,13 +7,11 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "tsc && vitest"
-  },
-  "dependencies": {
-    "ts-node": "^10.9.2",
-    "typescript": "^6.0.3"
+    "sa": "tsc",
+    "test": "vitest"
   },
   "devDependencies": {
+    "typescript": "^6.0.3",
     "vitest": "^4.1.6"
   }
 }

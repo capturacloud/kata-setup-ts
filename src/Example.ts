@@ -1,5 +1,5 @@
 export class Example {
   method (): boolean {
-    return true
+    return true;
   }
 }

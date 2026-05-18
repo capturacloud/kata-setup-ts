@@ -1,4 +1,4 @@
-import { Example } from '../src/Example'
+import { Example } from '@/Example'
 
 it('should work', () => {
   const example = new Example();
