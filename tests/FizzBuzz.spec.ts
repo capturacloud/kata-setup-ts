@@ -6,26 +6,11 @@ it.each([3, 6, 42]) (`should return fizz when input is a multiple of 3 (%i)` , (
   expect(fizzbuzz.fizzbuzz(input)).toBe('fizz');
 })
 
-it('should return buzz when 5 given', () => {
+it.each([5, 10, 20]) (`should return buzz when input is a multiple of 5 (%i)` , (input) => {
   const fizzbuzz = new FizzBuzz();
 
-  expect(fizzbuzz.fizzbuzz(5)).toBe('buzz');
-
-});
-
-it('should return buzz when 10 given', () => {
-  const fizzbuzz = new FizzBuzz();
-
-  expect(fizzbuzz.fizzbuzz(10)).toBe('buzz');
-
-});
-
-it('should return buzz when 20 given', () => {
-  const fizzbuzz = new FizzBuzz();
-
-  expect(fizzbuzz.fizzbuzz(20)).toBe('buzz');
-
-});
+  expect(fizzbuzz.fizzbuzz(input)).toBe('buzz');
+})
 
 
 it('should return fizzbuzz when 15 given', () => {
