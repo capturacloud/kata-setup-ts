@@ -17,9 +17,8 @@ it.each([1800, 1700, 1900])( 'should return false when the input (%i) is divisib
 
   expect(leap.leapYear(input)).toBe(false);
 });
+it.each([1600])( 'should return true when the input (%i) is divisible by 400', (input) => {
+  const leap = new LeapYear();
 
-it('should return true when 1600 is the input', () => {
-  const input = new LeapYear();
-
-  expect(input.leapYear(1600)).toBe(true);
+  expect(leap.leapYear(input)).toBe(true);
 });
