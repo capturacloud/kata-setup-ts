@@ -12,8 +12,8 @@ it.each([1996, 1992, 1988])( 'should return true when the input (%i) is divisibl
   expect(leap.leapYear(input)).toBe(true);
 });
 
-it('should return false when 1800 is the input', () => {
-  const input = new LeapYear();
+it.each([1800])( 'should return false when the input (%i) is divisible by 100', (input) => {
+  const leap = new LeapYear();
 
-  expect(input.leapYear(1800)).toBe(false);
+  expect(leap.leapYear(input)).toBe(false);
 });
