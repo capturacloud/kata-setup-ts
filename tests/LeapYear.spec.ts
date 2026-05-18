@@ -1,9 +1,8 @@
 import { LeapYear } from '@/LeapYear'
+it.each([1997, 1995, 1994])( 'should return false when the input (%i) is not divisible by 4', (input) => {
+  const leap = new LeapYear();
 
-it('should return false when 1997 is the input', () => {
-  const input = new LeapYear();
-
-  expect(input.leapYear(1997)).toBe(false);
+  expect(leap.leapYear(input)).toBe(false);
 });
 
 it.each([1996, 1992, 1988])( 'should return true when the input (%i) is divisible by 4', (input) => {
