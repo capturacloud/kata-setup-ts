@@ -20,6 +20,14 @@ it('should return buzz when 10 given', () => {
 
 });
 
+it('should return buzz when 20 given', () => {
+  const fizzbuzz = new FizzBuzz();
+
+  expect(fizzbuzz.fizzbuzz(20)).toBe('buzz');
+
+});
+
+
 it('should return fizzbuzz when 15 given', () => {
   const fizzbuzz = new FizzBuzz();
 
