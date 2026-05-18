@@ -21,4 +21,11 @@ it('should return fizzbuzz when 15 given', () => {
 
 });
 
+it('should return 1 when 1 given', () => {
+  const fizzbuzz = new FizzBuzz();
+
+  expect(fizzbuzz.fizzbuzz(1)).toBe(1);
+
+});
+
 
