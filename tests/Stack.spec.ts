@@ -77,3 +77,12 @@ describe('size()', () => {test('size must return 0 on a newly created stack', ()
     expect(stack.size()).toBe(1);
   });
 })
+
+describe('pop()', () => {
+  test('pop must return the removed element from the stack', () => {
+    const stack = new Stack();
+    stack.push('hello');
+
+    expect(stack.pop()).toBe('hello');
+  })
+})

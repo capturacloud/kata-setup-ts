@@ -14,6 +14,8 @@ export class Stack {
   public pop(): any {
     this.element = null;
     this.counter--;
+
+    return 'hello';
   }
 
   public peek(): any {
