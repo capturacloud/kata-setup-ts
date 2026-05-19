@@ -87,10 +87,10 @@ describe('pop()', () => {
     expect(stack.pop()).toBe(null);
   });
 
-  test('pop must return the removed element from the stack', () => {
+  test.each(['hello', 'world'])('pop must return the removed element from the stack', (element : any) => {
     const stack = new Stack();
-    stack.push('hello');
+    stack.push(element);
 
-    expect(stack.pop()).toBe('hello');
+    expect(stack.pop()).toBe(element);
   });
 });

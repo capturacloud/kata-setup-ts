@@ -12,14 +12,12 @@ export class Stack {
   }
 
   public pop(): any {
-    if (this.counter === 0) {
-      return null;
-    }
+    let element = this.element;
 
     this.element = null;
     this.counter--;
 
-    return 'hello';
+    return element;
   }
 
   public peek(): any {
