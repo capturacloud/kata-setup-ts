@@ -1,5 +1,4 @@
 export class Stack {
-  private element: any = null;
   private elements: any[] = [];
   private counter: number = 0;
 
@@ -8,7 +7,6 @@ export class Stack {
   }
 
   public push (element: any): void {
-    this.element = element;
     this.elements.push(element);
     this.counter++;
   }
@@ -16,7 +14,6 @@ export class Stack {
   public pop(): any {
     let element = this.elements.pop() ?? null;
 
-    this.element = null;
     this.counter--;
 
     return element;
