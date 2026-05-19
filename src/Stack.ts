@@ -13,6 +13,7 @@ export class Stack {
 
   public pop(): any {
     this.element = null;
+    this.counter--;
   }
 
   public peek(): any {

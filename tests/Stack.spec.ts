@@ -54,3 +54,12 @@ test('size must return 2 when you push two elements', () => {
 
   expect(stack.size()).toBe(2);
 });
+
+test('size must return the amount of elements in the stack', () => {
+  const stack = new Stack();
+  stack.push('hello');
+  stack.push('world');
+  stack.pop();
+
+  expect(stack.size()).toBe(1);
+});
