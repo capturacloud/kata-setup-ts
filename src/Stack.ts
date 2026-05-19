@@ -18,6 +18,6 @@ export class Stack {
   }
 
   public size(): number {
-    return 0;
+    return this.element ? 1 : 0;
   }
 }

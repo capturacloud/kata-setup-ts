@@ -39,3 +39,10 @@ test('size must return 0 on a newly created stack', () => {
 
   expect(stack.size()).toBe(0);
 });
+
+test('size must return 1 when you push one element', () => {
+  const stack = new Stack();
+  stack.push('hello');
+
+  expect(stack.size()).toBe(1);
+});
