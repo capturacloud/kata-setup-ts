@@ -1,19 +1,19 @@
 export class Stack {
-  private isEmpty: boolean = true;
+  private element: any = null;
 
   public empty (): boolean {
-    return this.isEmpty;
+    return this.element === null;
   }
 
   public push (element: any): void {
-    this.isEmpty = false;
+    this.element = element;
   }
 
   public pop(): any {
-    this.isEmpty = true;
+    this.element = null;
   }
 
   public peek(): any {
-    return null;
+    return this.element;
   }
 }

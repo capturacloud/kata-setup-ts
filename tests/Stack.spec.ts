@@ -25,4 +25,11 @@ test('peek must return null on a newly created stack', () => {
   const stack = new Stack();
 
   expect(stack.peek()).toBe(null);
-})
+});
+
+test('peek must return the last element in the stack', () => {
+  const stack = new Stack();
+  stack.push('hello');
+
+  expect(stack.peek()).toBe('hello');
+});
