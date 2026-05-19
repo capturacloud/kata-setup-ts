@@ -24,6 +24,6 @@ export class Stack {
   }
 
   public size(): number {
-    return this.counter;
+    return this.elements.length;
   }
 }
