@@ -10,9 +10,7 @@ export class Stack {
   }
 
   public pop(): any {
-    let element = this.elements.pop() ?? null;
-
-    return element;
+    return this.elements.pop() ?? null;
   }
 
   public peek(): any {
