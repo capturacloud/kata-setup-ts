@@ -23,7 +23,7 @@ export class Stack {
   }
 
   public peek(): any {
-    return this.element;
+    return this.elements.at(-1) ?? null;
   }
 
   public size(): number {

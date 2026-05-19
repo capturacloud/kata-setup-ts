@@ -45,6 +45,15 @@ describe('peek()', () => {
 
     expect(stack.peek()).toBe('hello');
   });
+
+  test('peek must return the first element in the stack when you pop the second', () => {
+    const stack = new Stack();
+    stack.push('hello');
+    stack.push('world');
+    stack.pop();
+
+    expect(stack.peek()).toBe('hello');
+  });
 });
 
 describe('size()', () => {
