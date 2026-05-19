@@ -1,5 +1,6 @@
 export class Stack {
   private element: any = null;
+  private counter: number = 0;
 
   public empty (): boolean {
     return this.element === null;
@@ -7,6 +8,7 @@ export class Stack {
 
   public push (element: any): void {
     this.element = element;
+    this.counter++;
   }
 
   public pop(): any {
@@ -18,6 +20,6 @@ export class Stack {
   }
 
   public size(): number {
-    return this.element ? 1 : 0;
+    return this.counter;
   }
 }

@@ -46,3 +46,11 @@ test('size must return 1 when you push one element', () => {
 
   expect(stack.size()).toBe(1);
 });
+
+test('size must return 2 when you push two elements', () => {
+  const stack = new Stack();
+  stack.push('hello');
+  stack.push('world');
+
+  expect(stack.size()).toBe(2);
+});
