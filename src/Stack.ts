@@ -1,6 +1,5 @@
 export class Stack {
   private elements: any[] = [];
-  private counter: number = 0;
 
   public empty (): boolean {
     return this.elements.length === 0;
@@ -8,13 +7,10 @@ export class Stack {
 
   public push (element: any): void {
     this.elements.push(element);
-    this.counter++;
   }
 
   public pop(): any {
     let element = this.elements.pop() ?? null;
-
-    this.counter--;
 
     return element;
   }
