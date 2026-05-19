@@ -12,6 +12,10 @@ export class Stack {
   }
 
   public pop(): any {
+    if (this.counter === 0) {
+      return null;
+    }
+
     this.element = null;
     this.counter--;
 

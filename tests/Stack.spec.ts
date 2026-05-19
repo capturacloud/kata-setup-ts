@@ -80,6 +80,13 @@ describe('size()', () => {
 });
 
 describe('pop()', () => {
+  test('pop must return null when you pop from an empty stack', () => {
+    const stack = new Stack();
+    stack.pop();
+
+    expect(stack.pop()).toBe(null);
+  });
+
   test('pop must return the removed element from the stack', () => {
     const stack = new Stack();
     stack.push('hello');
