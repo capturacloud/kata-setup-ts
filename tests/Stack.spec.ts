@@ -33,3 +33,9 @@ test('peek must return the last element in the stack', () => {
 
   expect(stack.peek()).toBe('hello');
 });
+
+test('size must return 0 on a newly created stack', () => {
+  const stack = new Stack();
+
+  expect(stack.size()).toBe(0);
+});

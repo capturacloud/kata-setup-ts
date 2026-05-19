@@ -16,4 +16,8 @@ export class Stack {
   public peek(): any {
     return this.element;
   }
+
+  public size(): number {
+    return 0;
+  }
 }
