@@ -8,4 +8,8 @@ export class Stack {
   public push (element: any): void {
     this.isEmpty = false;
   }
+
+  public pop(): any {
+    this.isEmpty = true;
+  }
 }

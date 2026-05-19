@@ -13,3 +13,11 @@ test('empty must return false on a non empty stack', () => {
   expect(stack.empty()).toBe(false);
 });
 
+test('empty must return true when you pop all elements from the stack', () => {
+  const stack = new Stack();
+  stack.push('hello');
+  stack.pop();
+
+  expect(stack.empty()).toBe(true);
+});
+
