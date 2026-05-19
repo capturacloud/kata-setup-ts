@@ -29,8 +29,8 @@ describe('empty()', () => {
     stack.pop();
 
     expect(stack.empty()).toBe(false);
-  })
-})
+  });
+});
 
 describe('peek()', () => {
   test('peek must return null on a newly created stack', () => {
@@ -45,13 +45,14 @@ describe('peek()', () => {
 
     expect(stack.peek()).toBe('hello');
   });
-})
-
-describe('size()', () => {test('size must return 0 on a newly created stack', () => {
-  const stack = new Stack();
-
-  expect(stack.size()).toBe(0);
 });
+
+describe('size()', () => {
+  test('size must return 0 on a newly created stack', () => {
+    const stack = new Stack();
+
+    expect(stack.size()).toBe(0);
+  });
 
   test('size must return 1 when you push one element', () => {
     const stack = new Stack();
@@ -76,7 +77,7 @@ describe('size()', () => {test('size must return 0 on a newly created stack', ()
 
     expect(stack.size()).toBe(1);
   });
-})
+});
 
 describe('pop()', () => {
   test('pop must return the removed element from the stack', () => {
@@ -84,5 +85,5 @@ describe('pop()', () => {
     stack.push('hello');
 
     expect(stack.pop()).toBe('hello');
-  })
-})
+  });
+});
