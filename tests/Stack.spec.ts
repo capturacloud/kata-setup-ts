@@ -93,4 +93,13 @@ describe('pop()', () => {
 
     expect(stack.pop()).toBe(element);
   });
+
+  test('pop must return the last element from the stack when you pop all the elements', () => {
+    const stack = new Stack();
+    stack.push('hello');
+    stack.push('world');
+    stack.pop();
+
+    expect(stack.pop()).toBe('hello');
+  });
 });
