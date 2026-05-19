@@ -3,7 +3,7 @@ export class Stack {
   private counter: number = 0;
 
   public empty (): boolean {
-    return this.element === null;
+    return this.counter === 0;
   }
 
   public push (element: any): void {

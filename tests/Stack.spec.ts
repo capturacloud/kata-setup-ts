@@ -21,6 +21,15 @@ describe('empty()', () => {
 
     expect(stack.empty()).toBe(true);
   });
+
+  test('empty must return false when you push more than pop', () => {
+    const stack = new Stack();
+    stack.push('hello');
+    stack.push('world');
+    stack.pop();
+
+    expect(stack.empty()).toBe(false);
+  })
 })
 
 describe('peek()', () => {
