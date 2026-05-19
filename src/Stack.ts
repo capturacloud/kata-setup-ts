@@ -12,4 +12,8 @@ export class Stack {
   public pop(): any {
     this.isEmpty = true;
   }
+
+  public peek(): any {
+    return null;
+  }
 }
