@@ -2,8 +2,7 @@
 
 Base project for the CapturaCloud development team to practice katas in TypeScript.
 
-The project includes a minimal TypeScript and Vitest setup so developers can start programming exercises quickly
-while keeping the focus on design, refactoring, and test-driven evolution.
+It includes a minimal TypeScript and Vitest setup so exercises can start quickly.
 
 ## Installation
 
@@ -20,6 +19,12 @@ You’ll need **NVM** and **npm** installed on your system. The required Node.js
 
 ```bash
 npm install
+```
+
+### Run static analysis
+
+```bash
+npm run sa
 ```
 
 ### Run tests

@@ -2,10 +2,6 @@
   "name": "kata-setup-ts",
   "license": "MIT",
   "author": "CapturaCloud <devs@capturacloud.com>",
-  "directories": {
-    "lib": "src",
-    "test": "tests"
-  },
   "scripts": {
     "sa": "tsc",
     "test": "vitest"
