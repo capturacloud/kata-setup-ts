@@ -5,15 +5,16 @@ export class StringCalculator {
       return 0;
     }
 
-    if (numbers === '//;\\n1;2') {
-      return 3;
+    let separator: string | RegExp = /[,\n]/;
+    let textToSplit = numbers;
+
+    if (numbers.startsWith('//')){
+      separator = numbers[2];
+      textToSplit = numbers.substring(4);
     }
 
-    if (numbers === '//-\\n1-2') {
-      return 3;
-    }
+    let numbersClean = textToSplit.split(separator);
 
-    let numbersClean = numbers.split(/[,\n]/);
     let total = 0;
 
     for (let i = 0; i < numbersClean.length; i++) {
