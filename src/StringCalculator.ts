@@ -5,20 +5,13 @@ export class StringCalculator {
       return 0;
     }
 
-    if (numbers.length === 1) {
-      return parseInt(numbers);
-    }
-
     let numbersClean = numbers.split(',');
+    let total = 0;
 
-    if (numbers.length === 3) {
-      return parseInt(numbersClean[0]) + parseInt(numbersClean[1]);
+    for (let i = 0; i < numbersClean.length; i++) {
+      total += parseInt(numbersClean[i]);
     }
 
-    if (numbers.length === 5) {
-      return parseInt(numbersClean[0]) + parseInt(numbersClean[1]) + parseInt(numbersClean[2])
-    }
-
-    return parseInt(numbersClean[0]) + parseInt(numbersClean[1]) + parseInt(numbersClean[2]) + parseInt(numbersClean[3]);
+    return total;
   }
 }
