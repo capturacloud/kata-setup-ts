@@ -1,12 +1,17 @@
 export class StringCalculator {
 
   add(numbers: string): number {
-    if (numbers === '2,4') {
-      return 6;
+    if (numbers === '') {
+      return 0;
     }
-    if (numbers === '4') {
-      return 4;
+
+    if (numbers.length === 1) {
+      return parseInt(numbers);
     }
-    return 0;
+
+    let numbersClean = numbers.split(',')
+    let total = parseInt(numbersClean[0]) + parseInt(numbersClean[1]);
+
+    return total;
   }
 }
