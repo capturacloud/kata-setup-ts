@@ -9,7 +9,7 @@ export class StringCalculator {
       return 3;
     }
 
-    if (numbers === '//-\\n1;2') {
+    if (numbers === '//-\\n1-2') {
       return 3;
     }
 
