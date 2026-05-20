@@ -1,12 +1,10 @@
 export class Bowling {
-  private _rolled: boolean = false;
+  private pinRolled: number = 0;
+
   roll(pins: number): void {
-    this._rolled = true;
+    this.pinRolled = pins;
   }
   score():number {
-    if (this._rolled) {
-      return 2
-    }
-    return 0;
+    return this.pinRolled;
   }
 }
