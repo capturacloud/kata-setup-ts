@@ -67,7 +67,7 @@ it('should return 100 with rolls 91909090909090909090 counting the spare', () =>
   expect(bowling.score()).toBe(100)
 })
 
-it('should return 100 with rolls 919090909090909090918 counting the spare', () => {
+it('should return 109 with rolls 919090909090909090918 counting the spare', () => {
   const bowling = new Bowling()
   const rolls: number[] = [9,1,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,1,8]
   for (const roll of rolls) {
