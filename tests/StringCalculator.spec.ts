@@ -17,3 +17,9 @@ it('should return 6 when passed a string with "2,4"', () => {
 
   expect(calculator.add('2,4')).toBe(6);
 });
+
+it('should return 12 when passed a string with "3,3,6"', () => {
+  const calculator = new StringCalculator();
+
+  expect(calculator.add('3,3,6')).toBe(12);
+});
