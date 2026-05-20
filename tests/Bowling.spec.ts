@@ -39,3 +39,12 @@ it('should return 5 with rolls 113', () => {
   bowling.roll(3)
   expect(bowling.score()).toBe(5)
 })
+
+it('should return 6 with rolls 1131', () => {
+  const bowling = new Bowling()
+  bowling.roll(1)
+  bowling.roll(1)
+  bowling.roll(3)
+  bowling.roll(1)
+  expect(bowling.score()).toBe(6)
+})
