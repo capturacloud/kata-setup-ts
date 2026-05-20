@@ -5,15 +5,7 @@ export class StringCalculator {
       return 0;
     }
 
-    if (numbers === '1\n2,3') {
-      return 6;
-    }
-
-    if (numbers === '1\n2,3\n6') {
-      return 12;
-    }
-
-    let numbersClean = numbers.split(',');
+    let numbersClean = numbers.split(/[,\n]/);
     let total = 0;
 
     for (let i = 0; i < numbersClean.length; i++) {
