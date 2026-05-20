@@ -66,3 +66,13 @@ it('should return 6 when passed a string with "//|\n3|3"', () => {
   expect(calculator.add('//|\n3|3')).toBe(6);
 });
 
+it('should throw an exception when passed a string with "1,-1,1"', () => {
+  const calculator = new StringCalculator();
+
+  expect(() => {
+    calculator.add('1,-1,1');
+  }).toThrow("Negatives not allowed: -1");
+});
+
+
+

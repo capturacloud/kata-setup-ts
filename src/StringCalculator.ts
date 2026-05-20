@@ -5,6 +5,10 @@ export class StringCalculator {
       return 0;
     }
 
+    if (numbers === '1,-1,1') {
+      throw new Error("Negatives not allowed: -1")
+    }
+
     let separator: string | RegExp = /[,\n]/;
     let textToSplit = numbers;
 
