@@ -57,6 +57,6 @@ it('should return 3 when passed a string with "//;\\n1;2"', () => {
 it('should return 3 when passed a string with "//-\\n1-2"', () => {
   const calculator = new StringCalculator();
 
-  expect(calculator.add('//-\\n1;2')).toBe(3);
+  expect(calculator.add('//-\\n1-2')).toBe(3);
 });
 
