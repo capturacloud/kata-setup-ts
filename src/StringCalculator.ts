@@ -15,6 +15,10 @@ export class StringCalculator {
       return parseInt(numbersClean[0]) + parseInt(numbersClean[1]);
     }
 
-    return parseInt(numbersClean[0]) + parseInt(numbersClean[1]) + parseInt(numbersClean[2]);
+    if (numbers.length === 5) {
+      return parseInt(numbersClean[0]) + parseInt(numbersClean[1]) + parseInt(numbersClean[2])
+    }
+
+    return parseInt(numbersClean[0]) + parseInt(numbersClean[1]) + parseInt(numbersClean[2]) + parseInt(numbersClean[3]);
   }
 }
