@@ -48,3 +48,12 @@ it('should return 6 with rolls 1131', () => {
   bowling.roll(1)
   expect(bowling.score()).toBe(6)
 })
+
+it('should return 90 with rolls 90909090909090909090', () => {
+  const bowling = new Bowling()
+  const rolls: number[] = [9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0]
+  for (const roll of rolls) {
+    bowling.roll(roll)
+  }
+  expect(bowling.score()).toBe(90)
+})
