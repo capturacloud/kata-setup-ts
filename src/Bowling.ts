@@ -3,9 +3,13 @@ export class Bowling {
   private numberOfRolls: number = 0
   private wasSpare: boolean = false;
   private lastRoll: number = 0;
+  private LAST_FRAME_ROLL_NUMBER = 18;
+
 
   roll(pins: number): void {
-    if(this.wasSpare) {
+    const isLastFrame = this.numberOfRolls > this.LAST_FRAME_ROLL_NUMBER;
+
+    if(this.wasSpare && !isLastFrame) {
       this.total += pins;
       this.wasSpare = false;
     }
@@ -15,7 +19,6 @@ export class Bowling {
       this.wasSpare = true;
     }
     this.total += pins;
-
 
     this.numberOfRolls++;
     this.lastRoll = pins;
