@@ -35,3 +35,10 @@ it('should return 25 when passed a string with "3,3,6,4,4,5"', () => {
 
   expect(calculator.add('3,3,6,4,4,5')).toBe(25);
 });
+
+it('should return 6 when passed a string with "1\n2,3"', () => {
+  const calculator = new StringCalculator();
+
+  expect(calculator.add('1\n2,3')).toBe(6);
+});
+
