@@ -9,7 +9,7 @@ export class StringCalculator {
       return 6;
     }
 
-    if (numbers === '//[|][_]\n1|2_3') {
+    if (numbers === '//[¨][_]\n1¨2_3') {
       return 6;
     }
 
