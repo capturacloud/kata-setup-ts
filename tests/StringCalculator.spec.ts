@@ -132,10 +132,16 @@ it('should return 6 when passed a string with "//[*][%]\n1*2%3"', () => {
   expect(calculator.add('//[*][%]\n1*2%3')).toBe(6);
 });
 
-it('should return 6 when passed a string with "//[|][_]\n1¨2_3"', () => {
+it('should return 6 when passed a string with "//[¨][_]\n1¨2_3"', () => {
   const calculator = new StringCalculator();
 
   expect(calculator.add('//[¨][_]\n1¨2_3')).toBe(6);
+});
+
+it('should return 3 when passed a string with "//[¨][_]\n1¨2_1001"', () => {
+  const calculator = new StringCalculator();
+
+  expect(calculator.add('//[¨][_]\n1¨2_1001')).toBe(3);
 });
 
 

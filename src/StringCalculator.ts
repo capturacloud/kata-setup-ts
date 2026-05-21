@@ -5,14 +5,6 @@ export class StringCalculator {
       return 0;
     }
 
-    if (numbers === '//[*][%]\n1*2%3') {
-      return 6;
-    }
-
-    if (numbers === '//[¨][_]\n1¨2_3') {
-      return 6;
-    }
-
     let separator: string | RegExp = /[,\n]/;
     let textToSplit = numbers;
 
@@ -22,9 +14,15 @@ export class StringCalculator {
     }
 
     if (numbers.startsWith('//[')){
-      let separatorEnd = numbers.indexOf(']')
-      separator = numbers.substring(3, separatorEnd);
-      textToSplit = numbers.substring(separatorEnd + 2);
+      let separatorEnd = numbers.indexOf('\n');
+      let allSeparators = numbers.substring(2, separatorEnd);
+      let cleanSeparators = allSeparators.substring(1, allSeparators.length - 1);
+      let arraySeparators = cleanSeparators.split('][');
+      textToSplit = numbers.substring(separatorEnd + 1);
+      for(let i = 0; i < arraySeparators.length; i++){
+        textToSplit = textToSplit.split(arraySeparators[i]).join(',');
+      }
+      separator = ',';
     }
 
     if (textToSplit.includes('-') && separator !== '-') {
@@ -38,7 +36,6 @@ export class StringCalculator {
     }
 
     let numbersClean = textToSplit.split(separator);
-
     let total = 0;
 
     for (let i = 0; i < numbersClean.length; i++) {
