@@ -82,5 +82,13 @@ it('should throw an exception when passed a string with "-2,-1,1"', () => {
   }).toThrow("Negatives not allowed: -2 -1");
 });
 
+it('should throw an exception when passed a string with "-2\n-1,1"', () => {
+  const calculator = new StringCalculator();
+
+  expect(() => {
+    calculator.add('-2\n-1,1');
+  }).toThrow("Negatives not allowed: -2 -1");
+});
+
 
 

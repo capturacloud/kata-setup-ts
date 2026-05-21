@@ -5,20 +5,22 @@ export class StringCalculator {
       return 0;
     }
 
-    if (numbers === '1,-1,1') {
-      throw new Error("Negatives not allowed: -1")
-    }
-
-    if (numbers === '-2,-1,1') {
-      throw new Error("Negatives not allowed: -2 -1")
-    }
-
     let separator: string | RegExp = /[,\n]/;
     let textToSplit = numbers;
 
     if (numbers.startsWith('//')){
       separator = numbers[2];
       textToSplit = numbers.substring(4);
+    }
+
+    if (textToSplit.includes('-') && separator !== '-') {
+      let negativeString = '';
+      for (let i = 0; i < textToSplit.length; i++) {
+        if(textToSplit[i].startsWith('-')){
+          negativeString += textToSplit[i] + textToSplit[i + 1] + ' ';
+        }
+      }
+      throw new Error('Negatives not allowed: ' + negativeString);
     }
 
     let numbersClean = textToSplit.split(separator);
