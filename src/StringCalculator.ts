@@ -5,14 +5,6 @@ export class StringCalculator {
       return 0;
     }
 
-    if (numbers === '1001,2') {
-      return 2;
-    }
-
-    if (numbers === '1001\n2,4') {
-      return 6;
-    }
-
     let separator: string | RegExp = /[,\n]/;
     let textToSplit = numbers;
 
@@ -36,7 +28,9 @@ export class StringCalculator {
     let total = 0;
 
     for (let i = 0; i < numbersClean.length; i++) {
-      total += parseInt(numbersClean[i]);
+      if (parseInt(numbersClean[i]) <= 1000) {
+        total += parseInt(numbersClean[i]);
+      }
     }
 
     return total;
