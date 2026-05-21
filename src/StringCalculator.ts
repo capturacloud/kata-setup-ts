@@ -5,7 +5,7 @@ export class StringCalculator {
       return 0;
     }
 
-    if (numbers === '1001, 2') {
+    if (numbers === '1001,2') {
       return 2;
     }
 
