@@ -5,20 +5,18 @@ export class StringCalculator {
       return 0;
     }
 
-    if (numbers === '//[***]\\n1***2***3') {
-      return 6;
-    }
-
-    if (numbers === '//[**]\\n1**2**3') {
-      return 6;
-    }
-
     let separator: string | RegExp = /[,\n]/;
     let textToSplit = numbers;
 
     if (numbers.startsWith('//')){
       separator = numbers[2];
       textToSplit = numbers.substring(4);
+    }
+
+    if (numbers.startsWith('//[')){
+      let separatorEnd = numbers.indexOf(']')
+      separator = numbers.substring(3, separatorEnd);
+      textToSplit = numbers.substring(separatorEnd + 2);
     }
 
     if (textToSplit.includes('-') && separator !== '-') {
