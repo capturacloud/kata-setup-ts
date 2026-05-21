@@ -144,5 +144,11 @@ it('should return 3 when passed a string with "//[¨][_]\n1¨2_1001"', () => {
   expect(calculator.add('//[¨][_]\n1¨2_1001')).toBe(3);
 });
 
+it('should return 6 when passed a string with "//[foo][bar]\\n1foo2bar3"', () => {
+  const calculator = new StringCalculator();
+
+  expect(calculator.add('//[foo][bar]\\n1foo2bar3')).toBe(6);
+});
+
 
 
