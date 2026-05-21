@@ -96,6 +96,11 @@ it('should return 2 when passed a string with "1001,2"', () => {
   expect(calculator.add('1001,2')).toBe(2);
 });
 
+it('should return 6 when passed a string with "1001\n2,4"', () => {
+  const calculator = new StringCalculator();
+
+  expect(calculator.add('1001\n2,4')).toBe(6);
+});
 
 
 
