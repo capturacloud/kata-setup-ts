@@ -90,5 +90,12 @@ it('should throw an exception when passed a string with "-2\n-1,1"', () => {
   }).toThrow("Negatives not allowed: -2 -1");
 });
 
+it('should return 2 when passed a string with "1001,2"', () => {
+  const calculator = new StringCalculator();
+
+  expect(calculator.add('1001,2')).toBe(2);
+});
+
+
 
 
