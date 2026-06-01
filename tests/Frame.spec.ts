@@ -52,3 +52,10 @@ test('isCompleted should return false on a Frame with one roll', () => {
 
     expect(frame.isCompleted()).toBe(false);
 })
+
+test('isCompleted should return true on a Frame with a strike roll', () => {
+    const frame = new Frame()
+    frame.addRoll(new Roll(10))
+
+    expect(frame.isCompleted()).toBe(true);
+})
