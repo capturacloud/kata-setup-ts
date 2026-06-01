@@ -8,7 +8,6 @@ export class Frame implements FrameInterface {
     }
 
     score(): number {
-        return this.firstRoll?.pin ?? NaN;
+        return this.firstRoll?.pin ?? 0;
     }
-
 }
