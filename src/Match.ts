@@ -17,6 +17,11 @@ export class Match {
       return;
     }
 
+    if (this.frame) {
+      this.frame.addRoll(roll)
+      return;
+    }
+
     const isLastFrame = this.numberOfRolls > this.LAST_FRAME_ROLL_NUMBER;
 
     if(this.wasSpare && !isLastFrame) {

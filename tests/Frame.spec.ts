@@ -16,3 +16,9 @@ it('should return 0 with no roll', () => {
     expect(frame.score()).toBe(0)
 });
 
+it('should return 5 with a roll of 3 and a roll of 2', () => {
+    const frame = new Frame()
+    frame.addRoll(new Roll(3))
+    frame.addRoll(new Roll(2))
+    expect(frame.score()).toBe(5)
+})

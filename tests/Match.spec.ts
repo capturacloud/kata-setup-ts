@@ -21,11 +21,11 @@ it('should return 6 with a roll of 6', () => {
   expect(match.score()).toBe(6)
 })
 
-it('should return 9 with a roll of 7 and a roll of two', () => {
+it('should return 5 with a roll of 3 and a roll of 2', () => {
   const match = new Match()
-  match.addRoll(new Roll(7))
+  match.addRoll(new Roll(3))
   match.addRoll(new Roll(2))
-  expect(match.score()).toBe(9)
+  expect(match.score()).toBe(5)
 })
 
 it('should return 5 with a roll of 2 and a roll of 3', () => {
