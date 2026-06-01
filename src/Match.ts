@@ -34,7 +34,7 @@ export class Match {
   }
   score():number {
     if (this.frame){
-      throw new Error()
+      return this.frame.score();
     }
 
     return this.total;
