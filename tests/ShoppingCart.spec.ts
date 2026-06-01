@@ -134,4 +134,30 @@ it('print should print a cart with added products and a discount of 5% when 5% c
  | Precio total: 13.30 €                    |
  --------------------------------------------
 `)
+
+});it('print should print a cart with added products and a discount of 10% when 10% code applied', () => {
+  const cart = new ShoppingCart()
+  const booster = new Product('TMNT Booster', 5.00, 21, 15)
+  const sleeve = new Product('Sleeves', 1.00, 14, 12)
+  const diceSet = new Product('Dice Set', 3.00, 14, 12)
+  const boosterItem = new ProductItem(2, booster)
+  const sleeveItem = new ProductItem(1, sleeve)
+  const diceSetItem = new ProductItem(1, diceSet)
+  const voucher5 = new Voucher('PROMO_10', 10)
+  cart.add(boosterItem, sleeveItem, diceSetItem)
+  cart.applyDiscount(voucher5)
+
+  expect(cart.print()).toBe(`
+ --------------------------------------------
+ | Producto     | Precio con IVA | Cantidad |
+ | TMNT Booster | 10.00€         |        2 |
+ | Sleeves      | 1.00€          |        1 |
+ | Dice Set     | 3.00€          |        1 |
+ |------------------------------------------|
+ | Promoción: 10% descontado (PROMO_10)     |
+ -------------------------------------------|
+ | Total de productos: 4                    |
+ | Precio total: 12.60 €                    |
+ --------------------------------------------
+`)
 });
