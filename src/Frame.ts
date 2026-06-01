@@ -21,7 +21,7 @@ export class Frame implements FrameInterface {
     }
 
     get firstScore(): number {
-        return 0
+        return this.firstRoll?.pin ?? 0
     }
 
     isCompleted(): boolean {

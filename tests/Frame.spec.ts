@@ -65,3 +65,10 @@ test('firstScore is 0 if there are no rolls', () => {
 
     expect(frame.firstScore).toBe(0)
 })
+
+test('firstScore is 3 if first roll is 3', () => {
+    const frame = new Frame()
+    frame.addRoll(new Roll(3))
+
+    expect(frame.firstScore).toBe(3)
+})
