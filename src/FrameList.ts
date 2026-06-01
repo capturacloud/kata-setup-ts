@@ -14,6 +14,10 @@ export class FrameList {
     }
 
     addRoll(roll: Roll) {
+        if(this.frames[0].isCompleted()){
+            this.frames[1].addRoll(roll);
+            return;
+        }
         this.frames[0].addRoll(roll);
     }
 }
