@@ -6,6 +6,7 @@ import {Roll} from "@/Roll";
 
 export class FrameList {
     public readonly frames: FixedArray<Frame, 10>
+    private currentFrameIndex: number = 0
 
     constructor() {
         this.frames = Array.from(
@@ -15,10 +16,10 @@ export class FrameList {
     }
 
     addRoll(roll: Roll) {
-        if(this.frames[0].isCompleted()){
-            this.frames[1].addRoll(roll);
-            return;
+        if(this.frames[this.currentFrameIndex].isCompleted()){
+            this.currentFrameIndex++
         }
-        this.frames[0].addRoll(roll);
+
+        this.frames[this.currentFrameIndex].addRoll(roll);
     }
 }
