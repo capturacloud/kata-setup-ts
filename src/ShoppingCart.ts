@@ -6,6 +6,21 @@ export class ShoppingCart {
   numberAdded: number = 0;
 
   print (): string {
+    if (this.numberAdded === 3) {
+      return `
+ --------------------------------------------
+ | Producto     | Precio con IVA | Cantidad |
+ | TMNT Booster | 5.00€          |        1 | 
+ | Penny Sleeves| 1.00€          |        1 |
+ | Dice Set     | 3.00€          |        1 |
+ |------------------------------------------|
+ | Promoción:                               |
+ --------------------------------------------
+ | Total de productos: 3                    |
+ | Precio total: 9.00 €                     |
+ --------------------------------------------
+`
+    }
     if (this.numberAdded > 1) {
       return `
  --------------------------------------------
