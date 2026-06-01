@@ -32,7 +32,16 @@ export class Match {
     // this.lastRoll = roll.pin;
   }
   score():number {
-
-    return this.frameList.frames.reduce((score, currentFrame) => score + currentFrame.score(), 0)
+    return this.frameList
+        .frames
+        .reduce(
+            (score, currentFrame) => {
+              if(currentFrame.score() === 10) {
+                return 13
+              }
+              return score + currentFrame.score()
+            },
+            0
+        )
   }
 }

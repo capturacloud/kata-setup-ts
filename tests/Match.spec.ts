@@ -78,3 +78,11 @@ it.todo('should return 109 with rolls 919090909090909090918 counting the spare',
   }
   expect(match.score()).toBe(109)
 })
+
+test('score should return 16 with rolls 913', () => {
+  const match = new Match()
+  match.addRoll(new Roll(9))
+  match.addRoll(new Roll(1))
+  match.addRoll(new Roll(3))
+  expect(match.score()).toBe(16)
+})
