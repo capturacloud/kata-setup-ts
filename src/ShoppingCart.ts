@@ -23,16 +23,16 @@ export class ShoppingCart {
     let totalPrice: number = 0;
     let totalProducts: number = 0;
 
-    for (const product of this.productList) {
-      let name = product.product.name;
-      let price = product.product.price;
-      let quantity = product.quantity;
+    for (const productItem of this.productList) {
+      let name = productItem.product.name;
+      let price = productItem.product.price;
+      let quantity = productItem.quantity;
 
       totalPrice += (price * quantity);
       totalProducts += quantity;
 
       const paddedName = name.padEnd(12, ' ');
-      const paddedPrice = `${price.toFixed(2)}€`.padEnd(14, ' ');
+      const paddedPrice = `${(price * quantity).toFixed(2)}€`.padEnd(14, ' ');
       const paddedQuantity = quantity.toString().padStart(8, ' ');
 
         productString += ` | ${paddedName} | ${paddedPrice} | ${paddedQuantity} |\n`;

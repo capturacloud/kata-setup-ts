@@ -82,3 +82,28 @@ it('print should print a cart with one booster, one sleeve and one dice when a b
  --------------------------------------------
 `)
 });
+
+it('print should print a cart with two booster, one sleeve and one dice when a booster, a sleeve and a dice is added', () => {
+  const cart = new ShoppingCart()
+  const booster = new Product('TMNT Booster', 5.00, 21, 15)
+  const sleeve = new Product('Sleeves', 1.00, 14, 12)
+  const diceSet = new Product('Dice Set', 3.00, 14, 12)
+  const boosterItem = new ProductItem(2, booster)
+  const sleeveItem = new ProductItem(1, sleeve)
+  const diceSetItem = new ProductItem(1, diceSet)
+  cart.add(boosterItem, sleeveItem, diceSetItem)
+
+  expect(cart.print()).toBe(`
+ --------------------------------------------
+ | Producto     | Precio con IVA | Cantidad |
+ | TMNT Booster | 10.00€         |        2 |
+ | Sleeves      | 1.00€          |        1 |
+ | Dice Set     | 3.00€          |        1 |
+ |------------------------------------------|
+ | Promoción:                               |
+ -------------------------------------------|
+ | Total de productos: 4                    |
+ | Precio total: 14.00 €                    |
+ --------------------------------------------
+`)
+});
