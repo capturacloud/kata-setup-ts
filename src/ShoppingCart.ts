@@ -1,11 +1,12 @@
 import {ProductItem} from "@/ProductItem";
 import {Voucher} from "@/Voucher";
+import {CartList} from "@/CartList";
 
 export class ShoppingCart {
   added : boolean = false;
   discount5 : boolean = false;
   discount10 : boolean = false;
-  productList: ProductItem[] = [];
+  productsList : CartList = new CartList();
 
   print (): string {
     if (!this.added) {
@@ -57,7 +58,7 @@ export class ShoppingCart {
     let totalPrice: number = 0;
     let totalProducts: number = 0;
 
-    for (const productItem of this.productList) {
+    for (const productItem of this.productsList.productList) {
       let name = productItem.product.name;
       let price = productItem.product.price;
       let quantity = productItem.quantity;
@@ -87,7 +88,7 @@ ${productString} |------------------------------------------|
 
   add(...product: ProductItem[]) {
     this.added = true;
-    this.productList.push(...product);
+    this.productsList.productList.push(...product);
   }
 
   applyDiscount(voucher: Voucher) {
