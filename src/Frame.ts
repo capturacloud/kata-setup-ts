@@ -20,6 +20,10 @@ export class Frame implements FrameInterface {
         return this.firstRoll?.pin ?? 0;
     }
 
+    get firstScore(): number {
+        return 0
+    }
+
     isCompleted(): boolean {
         return this.lastRoll !== undefined || this.score() === 10;
     }

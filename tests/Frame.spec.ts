@@ -59,3 +59,9 @@ test('isCompleted should return true on a Frame with a strike roll', () => {
 
     expect(frame.isCompleted()).toBe(true);
 })
+
+test('firstScore is 0 if there are no rolls', () => {
+    const frame = new Frame()
+
+    expect(frame.firstScore).toBe(0)
+})

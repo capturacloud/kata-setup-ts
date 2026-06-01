@@ -86,3 +86,12 @@ test('score should return 16 with rolls 913', () => {
   match.addRoll(new Roll(3))
   expect(match.score()).toBe(16)
 })
+
+test('score should return 19 with rolls 9141', () => {
+  const match = new Match()
+  match.addRoll(new Roll(9))
+  match.addRoll(new Roll(1))
+  match.addRoll(new Roll(4))
+  match.addRoll(new Roll(1))
+  expect(match.score()).toBe(19)
+})
