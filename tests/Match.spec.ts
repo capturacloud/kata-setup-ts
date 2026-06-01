@@ -7,11 +7,11 @@ it('should return 0 if there is no rolls', () => {
   expect(match.score()).toBe(0);
 });
 
-it('should return 2 with a roll of 2', () => {
+it('should return 3 with a roll of 3', () => {
   const match = new Match()
-  const roll = new Roll(2);
+  const roll = new Roll(3);
   match.addRoll(roll)
-  expect(match.score()).toBe(2)
+  expect(match.score()).toBe(3)
 })
 
 it('should return 7 with a roll of 7', () => {

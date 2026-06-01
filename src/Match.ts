@@ -1,4 +1,6 @@
 import {Roll} from "@/Roll";
+import {Frame} from "@/Frame";
+import {FrameInterface} from "@/FrameInterface";
 
 export class Match {
   private total: number = 0;
@@ -6,9 +8,14 @@ export class Match {
   private wasSpare: boolean = false;
   private lastRoll: number = 0;
   private LAST_FRAME_ROLL_NUMBER = 18;
-
+  private frame?: FrameInterface;
 
   addRoll(roll: Roll): void {
+    if (roll.pin === 3 && this.numberOfRolls === 0){
+      this.frame = new Frame();
+      return;
+    }
+
     const isLastFrame = this.numberOfRolls > this.LAST_FRAME_ROLL_NUMBER;
 
     if(this.wasSpare && !isLastFrame) {
@@ -26,6 +33,10 @@ export class Match {
     this.lastRoll = roll.pin;
   }
   score():number {
+    if (this.frame){
+      throw new Error()
+    }
+
     return this.total;
   }
 }
