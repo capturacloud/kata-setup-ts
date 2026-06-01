@@ -2,14 +2,19 @@ import {ProductItem} from "@/ProductItem";
 
 export class CartList{
     productList: ProductItem[] = [];
-    totalPrice = 0;
+    totalPrice: number = 0;
+    timesPushed: number = 0;
 
-    calculateTotalPrice():number{
-        return 10;
+    calculateTotalPrice(): number{
+        for (const product of this.productList){
+            this.totalPrice += product.quantity * product.product.price
+        }
+        return this.totalPrice;
     }
 
-    add(product: ProductItem){
+    add(product: ProductItem): void{
         this.productList.push(product)
+        this.timesPushed++
     }
 }
 
