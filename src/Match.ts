@@ -41,7 +41,10 @@ export class Match {
                 previousScore += currentFrame.firstScore;
               }
 
-              return {score: previousScore +currentFrame.score(), wasSpare: currentFrame.score() === 10}
+              return {
+                score: previousScore +currentFrame.score(),
+                wasSpare: currentFrame.score() === 10
+              }
             },
             { score: 0, wasSpare: false }
         ).score
