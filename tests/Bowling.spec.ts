@@ -1,80 +1,80 @@
-import { Bowling } from '@/Bowling'
+import { Match } from '@/Match'
 import {Roll} from "@/Roll";
 
 it('should return 0 if there is no rolls', () => {
-  const bowling = new Bowling();
+  const match = new Match();
 
-  expect(bowling.score()).toBe(0);
+  expect(match.score()).toBe(0);
 });
 
 it('should return 2 with a roll of 2', () => {
-  const bowling = new Bowling()
+  const match = new Match()
   const roll = new Roll(2);
-  bowling.addRoll(roll)
-  expect(bowling.score()).toBe(2)
+  match.addRoll(roll)
+  expect(match.score()).toBe(2)
 })
 
 it('should return 7 with a roll of 7', () => {
-  const bowling = new Bowling()
+  const match = new Match()
   const roll = new Roll(7);
-  bowling.addRoll(roll)
-  expect(bowling.score()).toBe(7)
+  match.addRoll(roll)
+  expect(match.score()).toBe(7)
 })
 
 it('should return 9 with a roll of 7 and a roll of two', () => {
-  const bowling = new Bowling()
-  bowling.addRoll(new Roll(7))
-  bowling.addRoll(new Roll(2))
-  expect(bowling.score()).toBe(9)
+  const match = new Match()
+  match.addRoll(new Roll(7))
+  match.addRoll(new Roll(2))
+  expect(match.score()).toBe(9)
 })
 
 it('should return 5 with a roll of 2 and a roll of 3', () => {
-  const bowling = new Bowling()
-  bowling.addRoll(new Roll(2))
-  bowling.addRoll(new Roll(3))
-  expect(bowling.score()).toBe(5)
+  const match = new Match()
+  match.addRoll(new Roll(2))
+  match.addRoll(new Roll(3))
+  expect(match.score()).toBe(5)
 })
 
 it('should return 5 with rolls 113', () => {
-  const bowling = new Bowling()
-  bowling.addRoll(new Roll(1))
-  bowling.addRoll(new Roll(1))
-  bowling.addRoll(new Roll(3))
-  expect(bowling.score()).toBe(5)
+  const match = new Match()
+  match.addRoll(new Roll(1))
+  match.addRoll(new Roll(1))
+  match.addRoll(new Roll(3))
+  expect(match.score()).toBe(5)
 })
 
 it('should return 6 with rolls 1131', () => {
-  const bowling = new Bowling()
-  bowling.addRoll(new Roll(1))
-  bowling.addRoll(new Roll(1))
-  bowling.addRoll(new Roll(3))
-  bowling.addRoll(new Roll(1))
-  expect(bowling.score()).toBe(6)
+  const match = new Match()
+  match.addRoll(new Roll(1))
+  match.addRoll(new Roll(1))
+  match.addRoll(new Roll(3))
+  match.addRoll(new Roll(1))
+  expect(match.score()).toBe(6)
 })
 
 it('should return 90 with rolls 90909090909090909090', () => {
-  const bowling = new Bowling()
+  const match = new Match()
   const rolls: number[] = [9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0]
   for (const roll of rolls) {
-    bowling.addRoll(new Roll(roll))
+    match.addRoll(new Roll(roll))
   }
-  expect(bowling.score()).toBe(90)
+  expect(match.score()).toBe(90)
 })
 
 it('should return 100 with rolls 91909090909090909090 counting the spare', () => {
-  const bowling = new Bowling()
+  const match = new Match()
   const rolls: number[] = [9,1,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0]
   for (const roll of rolls) {
-    bowling.addRoll(new Roll(roll))
+    match.addRoll(new Roll(roll))
   }
-  expect(bowling.score()).toBe(100)
+  expect(match.score()).toBe(100)
 })
 
 it('should return 109 with rolls 919090909090909090918 counting the spare', () => {
-  const bowling = new Bowling()
+  const match = new Match()
   const rolls: number[] = [9,1,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,1,8]
   for (const roll of rolls) {
-    bowling.addRoll(new Roll(roll))
+    match.addRoll(new Roll(roll))
   }
-  expect(bowling.score()).toBe(109)
+  expect(match.score()).toBe(109)
 })

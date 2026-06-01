@@ -1,6 +1,6 @@
 import {Roll} from "@/Roll";
 
-export class Bowling {
+export class Match {
   private total: number = 0;
   private numberOfRolls: number = 0
   private wasSpare: boolean = false;
