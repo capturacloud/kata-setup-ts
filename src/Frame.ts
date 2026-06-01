@@ -21,6 +21,6 @@ export class Frame implements FrameInterface {
     }
 
     isCompleted(): boolean {
-        return this.firstRoll !== undefined;
+        return this.lastRoll !== undefined;
     }
 }
