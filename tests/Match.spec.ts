@@ -37,9 +37,9 @@ it('should return 9 with a roll of 6 and a roll of 3', () => {
 
 it('should return 5 with rolls 113', () => {
   const match = new Match()
-  match.addRoll(new Roll(1))
-  match.addRoll(new Roll(1))
   match.addRoll(new Roll(3))
+  match.addRoll(new Roll(1))
+  match.addRoll(new Roll(1))
   expect(match.score()).toBe(5)
 })
 
