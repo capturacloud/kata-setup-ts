@@ -9,8 +9,9 @@ export class Voucher {
         this.discount = discount;
     }
 
-    static fromCode(codeName: keyof typeof VoucherCodes) : Voucher {
+    static fromCode(codeName: keyof typeof VoucherCodes): Voucher {
+        const discountValue = VoucherCodes[codeName];
 
-        return new Voucher('PROMO_5', 5);
+        return new Voucher(codeName, discountValue);
     }
 }
