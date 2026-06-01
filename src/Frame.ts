@@ -19,4 +19,8 @@ export class Frame implements FrameInterface {
         }
         return this.firstRoll?.pin ?? 0;
     }
+
+    isCompleted(): boolean {
+        return false;
+    }
 }

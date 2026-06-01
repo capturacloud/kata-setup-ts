@@ -20,12 +20,20 @@ it('should return 5 with a roll of 3 and a roll of 2', () => {
     const frame = new Frame()
     frame.addRoll(new Roll(3))
     frame.addRoll(new Roll(2))
+
     expect(frame.score()).toBe(5)
 })
 
 it('should return 9 with a roll of 6 and a roll of 3', () => {
-    const match = new Match()
-    match.addRoll(new Roll(6))
-    match.addRoll(new Roll(3))
-    expect(match.score()).toBe(9)
+    const frame = new Frame()
+    frame.addRoll(new Roll(6))
+    frame.addRoll(new Roll(3))
+
+    expect(frame.score()).toBe(9)
+})
+
+test('isCompleted should return false on a new Frame', () => {
+    const frame = new Frame()
+
+    expect(frame.isCompleted()).toBe(false);
 })

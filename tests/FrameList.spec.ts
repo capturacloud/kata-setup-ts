@@ -25,5 +25,16 @@ it('should add 6 to score to the first frame when adding one roll with 6 pin', (
     expect(frameList.frames[1].score()).toBe(0)
 })
 
+it('should add 9 to score to the first frame when adding 6, 2 and 1', () => {
+    const frameList = new FrameList();
+    frameList.addRoll(new Roll(6))
+    frameList.addRoll(new Roll(2))
+    frameList.addRoll(new Roll(1))
+
+    expect(frameList.frames[0].score()).toBe(8)
+    expect(frameList.frames[1].score()).toBe(1)
+    expect(frameList.frames[2].score()).toBe(0)
+})
+
 
 
