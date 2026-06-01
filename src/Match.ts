@@ -1,6 +1,7 @@
 import {Roll} from "@/Roll";
 import {Frame} from "@/Frame";
 import {FrameInterface} from "@/FrameInterface";
+import {FrameList} from "@/FrameList";
 
 export class Match {
   private total: number = 0;
@@ -9,18 +10,10 @@ export class Match {
   private lastRoll: number = 0;
   private LAST_FRAME_ROLL_NUMBER = 18;
   private frame?: FrameInterface;
+  private readonly frameList: FrameList = new FrameList();
 
   addRoll(roll: Roll): void {
-    if (this.frame) {
-      this.frame.addRoll(roll)
-      return;
-    }
-
-    if ((roll.pin === 3 || roll.pin === 6) && this.numberOfRolls === 0){
-      this.frame = new Frame();
-      this.frame.addRoll(roll)
-      return;
-    }
+    this.frameList.addRoll(roll);
 
     const isLastFrame = this.numberOfRolls > this.LAST_FRAME_ROLL_NUMBER;
 
@@ -39,7 +32,7 @@ export class Match {
     this.lastRoll = roll.pin;
   }
   score():number {
-    if (this.frame){
+    if (this.frameList.frames[0].score()){
       return this.frame.score();
     }
 
