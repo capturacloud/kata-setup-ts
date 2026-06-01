@@ -11,13 +11,13 @@ export class Match {
   private frame?: FrameInterface;
 
   addRoll(roll: Roll): void {
-    if ((roll.pin === 3 || roll.pin === 6) && this.numberOfRolls === 0){
-      this.frame = new Frame();
+    if (this.frame) {
       this.frame.addRoll(roll)
       return;
     }
 
-    if (this.frame) {
+    if ((roll.pin === 3 || roll.pin === 6) && this.numberOfRolls === 0){
+      this.frame = new Frame();
       this.frame.addRoll(roll)
       return;
     }
