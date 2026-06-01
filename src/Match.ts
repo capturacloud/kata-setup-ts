@@ -35,15 +35,15 @@ export class Match {
     return this.frameList
         .frames
         .reduce(
-            (score, currentFrame, currentIndex) => {
-              let previousScore = score.score;
-              if (score.wasSpare) {
-                previousScore += s
+            (previousRound, currentFrame, currentIndex) => {
+              let previousScore = previousRound.score;
+              if (previousRound.wasSpare) {
+                previousScore += currentFrame.firstScore;
               }
 
-              return {score: score.score +currentFrame.score(), wasSpare: currentFrame.score() === 10}
+              return {score: previousScore +currentFrame.score(), wasSpare: currentFrame.score() === 10}
             },
-            {score: 0, wasSpare: false}
-        )
+            { score: 0, wasSpare: false }
+        ).score
   }
 }
