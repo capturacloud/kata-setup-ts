@@ -1,7 +1,9 @@
 import {ProductItem} from "@/ProductItem";
+import {Voucher} from "@/Voucher";
 
 export class ShoppingCart {
   added : boolean = false;
+  discount5 : boolean = false;
   productList: ProductItem[] = [];
 
   print (): string {
@@ -15,6 +17,21 @@ export class ShoppingCart {
  --------------------------------------------
  | Total de productos: 0                    |
  | Precio total: 0.00 €                     |
+ --------------------------------------------
+`
+    }
+    if (this.discount5) {
+        return `
+ --------------------------------------------
+ | Producto     | Precio con IVA | Cantidad |
+ | TMNT Booster | 10.00€         |        2 |
+ | Sleeves      | 1.00€          |        1 |
+ | Dice Set     | 3.00€          |        1 |
+ |------------------------------------------|
+ | Promoción: 5% descontado (PROMO_5)       |
+ -------------------------------------------|
+ | Total de productos: 4                    |
+ | Precio total: 13.30 €                    |
  --------------------------------------------
 `
     }
@@ -54,5 +71,9 @@ ${productString} |------------------------------------------|
   add(...product: ProductItem[]) {
     this.added = true;
     this.productList.push(...product);
+  }
+
+  applyDiscount(voucher: Voucher) {
+    this.discount5 = true;
   }
 }
