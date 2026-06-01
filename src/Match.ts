@@ -15,27 +15,24 @@ export class Match {
   addRoll(roll: Roll): void {
     this.frameList.addRoll(roll);
 
-    const isLastFrame = this.numberOfRolls > this.LAST_FRAME_ROLL_NUMBER;
-
-    if(this.wasSpare && !isLastFrame) {
-      this.total += roll.pin;
-      this.wasSpare = false;
-    }
-
-    const isNewFrame = this.numberOfRolls % 2 === 0;
-    if(!isNewFrame && this.lastRoll + roll.pin === 10) {
-      this.wasSpare = true;
-    }
-    this.total += roll.pin;
-
-    this.numberOfRolls++;
-    this.lastRoll = roll.pin;
+    // const isLastFrame = this.numberOfRolls > this.LAST_FRAME_ROLL_NUMBER;
+    //
+    // if(this.wasSpare && !isLastFrame) {
+    //   this.total += roll.pin;
+    //   this.wasSpare = false;
+    // }
+    //
+    // const isNewFrame = this.numberOfRolls % 2 === 0;
+    // if(!isNewFrame && this.lastRoll + roll.pin === 10) {
+    //   this.wasSpare = true;
+    // }
+    // this.total += roll.pin;
+    //
+    // this.numberOfRolls++;
+    // this.lastRoll = roll.pin;
   }
   score():number {
-    if (this.frameList.frames[0].score()){
-      return this.frame.score();
-    }
 
-    return this.total;
+    return this.frameList.frames.reduce((score, currentFrame) => score + currentFrame.score(), 0)
   }
 }
