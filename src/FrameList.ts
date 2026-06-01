@@ -13,4 +13,7 @@ export class FrameList {
         ) as typeof this.frames
     }
 
+    addRoll(roll: Roll) {
+        this.frames[0].addRoll(new Roll(1));
+    }
 }
