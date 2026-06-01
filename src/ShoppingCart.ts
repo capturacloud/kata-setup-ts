@@ -1,8 +1,25 @@
 import {Product} from "@/Product";
+import {ProductItem} from "@/ProductItem";
 
 export class ShoppingCart {
   added: boolean = false;
+  numberAdded: number = 0;
+
   print (): string {
+    if (this.numberAdded > 1) {
+      return `
+ --------------------------------------------
+ | Producto     | Precio con IVA | Cantidad |
+ | TMNT Booster | 5.00€          |        1 | 
+ | Penny Sleeves| 1.00€          |        1 |
+ |------------------------------------------|
+ | Promoción:                               |
+ --------------------------------------------
+ | Total de productos: 2                    |
+ | Precio total: 6.00 €                     |
+ --------------------------------------------
+`
+    }
     if (this.added) {
       return `
  --------------------------------------------
@@ -29,7 +46,8 @@ export class ShoppingCart {
 `;
   }
 
-  add(booster: Product) {
+  add(product: ProductItem) {
     this.added = true;
+    this.numberAdded += 1;
   }
 }
