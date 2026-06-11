@@ -19,6 +19,9 @@ export class Product {
         if (name === "TMNTBooster") {
             return new Product('TMNT Booster', 5.00, 21, 15);
         }
+        if (name === "DiceSet") {
+            return new Product('Dice Set', 3.00, 14, 12);
+        }
         return new Product('Sleeves', 1.00, 14, 12);
     }
 }

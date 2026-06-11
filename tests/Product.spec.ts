@@ -11,3 +11,9 @@ it('should create a TMNT Booster product with method fromString', () => {
 
     expect(product).toMatchObject(new Product('TMNT Booster', 5.00, 21, 15))
 });
+
+it('should create a Dice Set product with method fromString', () => {
+    const product = Product.fromString('DiceSet');
+
+    expect(product).toMatchObject(new Product('Dice Set', 3.00, 14, 12))
+});
