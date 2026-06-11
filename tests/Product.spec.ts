@@ -3,8 +3,11 @@ import {Product} from "@/Product";
 it('should create a Sleeves product with method fromString', () => {
     const product = Product.fromString('Sleeves');
 
-    expect(product.name).toBe('Sleeves')
-    expect(product.price).toBe(1.00)
-    expect(product.tax).toBe(14)
-    expect(product.benefit).toBe(12)
+    expect(product).toMatchObject(new Product('Sleeves', 1.00, 14, 12))
+});
+
+it('should create a TMNT Booster product with method fromString', () => {
+    const product = Product.fromString('TMNTBooster');
+
+    expect(product).toMatchObject(new Product('TMNT Booster', 5.00, 21, 15))
 });

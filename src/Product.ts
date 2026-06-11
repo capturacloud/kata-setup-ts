@@ -16,6 +16,9 @@ export class Product {
     }
 
     static fromString(name: keyof typeof ProductList): Product {
+        if (name === "TMNTBooster") {
+            return new Product('TMNT Booster', 5.00, 21, 15);
+        }
         return new Product('Sleeves', 1.00, 14, 12);
     }
 }
