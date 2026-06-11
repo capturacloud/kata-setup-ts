@@ -22,41 +22,21 @@ export class ShoppingCart {
  --------------------------------------------
 `
     }
-    if (this.discount5) {
-        return `
- --------------------------------------------
- | Producto     | Precio con IVA | Cantidad |
- | TMNT Booster | 10.00€         |        2 |
- | Sleeves      | 1.00€          |        1 |
- | Dice Set     | 3.00€          |        1 |
- |------------------------------------------|
- | Promoción: 5% descontado (PROMO_5)       |
- -------------------------------------------|
- | Total de productos: 4                    |
- | Precio total: 13.30 €                    |
- --------------------------------------------
-`
-    }
-
-    if (this.discount10) {
-        return `
- --------------------------------------------
- | Producto     | Precio con IVA | Cantidad |
- | TMNT Booster | 10.00€         |        2 |
- | Sleeves      | 1.00€          |        1 |
- | Dice Set     | 3.00€          |        1 |
- |------------------------------------------|
- | Promoción: 10% descontado (PROMO_10)     |
- -------------------------------------------|
- | Total de productos: 4                    |
- | Precio total: 12.60 €                    |
- --------------------------------------------
-`
-    }
 
     let productString: string = ''
     let totalPrice: number = 0;
     let totalProducts: number = 0;
+    let discount = 0;
+    let promoString = ('').padEnd(29);
+
+    if (this.discount5) {
+        discount = 5;
+        promoString = ('5% descontado (PROMO_5)').padEnd(29);
+    }
+    if (this.discount10) {
+        discount = 10;
+        promoString = ('10% descontado (PROMO_10)').padEnd(29);
+    }
 
     for (const productItem of this.productsList.productList) {
       let name = productItem.product.name;
@@ -73,13 +53,14 @@ export class ShoppingCart {
         productString += ` | ${paddedName} | ${paddedPrice} | ${paddedQuantity} |\n`;
     }
 
+
       const paddedTotalProducts = totalProducts.toString().padEnd(20, ' ');
-      const paddedTotalPrice = `${totalPrice.toFixed(2)} €`.padEnd(26);
+      const paddedTotalPrice = `${(totalPrice * (0.01 * (100 - discount))).toFixed(2)} €`.padEnd(26);
       return `
  --------------------------------------------
  | Producto     | Precio con IVA | Cantidad |
 ${productString} |------------------------------------------|
- | Promoción:                               |
+ | Promoción: ${promoString} |
  -------------------------------------------|
  | Total de productos: ${paddedTotalProducts} |
  | Precio total: ${paddedTotalPrice} |
@@ -92,9 +73,12 @@ ${productString} |------------------------------------------|
   }
 
   applyDiscount(voucher: Voucher) {
-    if (voucher.code === 'PROMO_5') {
+    if (voucher.discount === 5) {
         this.discount5 = true;
     }
-    this.discount10 = true;
+
+    if (voucher.discount === 10) {
+          this.discount10 = true;
+    }
   }
 }

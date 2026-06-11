@@ -117,7 +117,7 @@ it('print should print a cart with added products and a discount of 5% when 5% c
   const boosterItem = new ProductItem(2, booster)
   const sleeveItem = new ProductItem(1, sleeve)
   const diceSetItem = new ProductItem(1, diceSet)
-  const voucher5 = new Voucher('PROMO_5', 5)
+  const voucher5 = Voucher.fromCode('PROMO_5')
   cart.add(boosterItem, sleeveItem, diceSetItem)
   cart.applyDiscount(voucher5)
 
@@ -143,7 +143,7 @@ it('print should print a cart with added products and a discount of 5% when 5% c
   const boosterItem = new ProductItem(2, booster)
   const sleeveItem = new ProductItem(1, sleeve)
   const diceSetItem = new ProductItem(1, diceSet)
-  const voucher5 = new Voucher('PROMO_10', 10)
+  const voucher5 = Voucher.fromCode('PROMO_10')
   cart.add(boosterItem, sleeveItem, diceSetItem)
   cart.applyDiscount(voucher5)
 
