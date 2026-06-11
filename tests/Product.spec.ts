@@ -17,3 +17,9 @@ it('should create a Dice Set product with method fromString', () => {
 
     expect(product).toMatchObject(new Product('Dice Set', 3.00, 14, 12))
 });
+
+it('should create a Deck Box product with method fromString', () => {
+    const product = Product.fromString('DeckBox');
+
+    expect(product).toMatchObject(new Product('Deck Box', 8.00, 14, 18))
+});

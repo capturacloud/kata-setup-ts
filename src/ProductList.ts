@@ -5,7 +5,7 @@ export enum ProductList {
     DeckBox = 'Deck Box'
 }
 
-const productData: Record<ProductList, number[]> = {
+export const productData: Record<ProductList, number[]> = {
     [ProductList.Sleeves]: [1.00, 14, 12],
     [ProductList.TMNTBooster]: [5.00, 21, 15],
     [ProductList.DiceSet]: [3.00, 14, 12],

@@ -1,4 +1,4 @@
-import {ProductList} from "@/ProductList";
+import {productData, ProductList} from "@/ProductList";
 
 export class Product {
     name: string;
@@ -16,12 +16,13 @@ export class Product {
     }
 
     static fromString(name: keyof typeof ProductList): Product {
-        if (name === "TMNTBooster") {
-            return new Product('TMNT Booster', 5.00, 21, 15);
-        }
-        if (name === "DiceSet") {
-            return new Product('Dice Set', 3.00, 14, 12);
-        }
-        return new Product('Sleeves', 1.00, 14, 12);
+
+        const productName = ProductList[name];
+        const data = productData[productName];
+        const price = data[0];
+        const tax = data[1];
+        const benefit = data[2];
+
+        return new Product(productName, price, tax, benefit);
     }
 }
