@@ -35,3 +35,9 @@ it('calculateTotalPrice should return 12 when four items of total price 12 added
 
     expect(cart.calculateTotalPrice()).toBe(12)
 });
+
+it('totalProducts should return zero when no products added', () => {
+    const cart = new CartList();
+
+    expect(cart.totalProducts()).toBe(0)
+});

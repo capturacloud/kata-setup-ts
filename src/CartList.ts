@@ -3,7 +3,6 @@ import {ProductItem} from "@/ProductItem";
 export class CartList{
     productList: ProductItem[] = [];
     totalPrice: number = 0;
-    timesPushed: number = 0;
 
     calculateTotalPrice(): number{
         for (const product of this.productList){
@@ -12,9 +11,12 @@ export class CartList{
         return this.totalPrice;
     }
 
-    add(product: ProductItem): void{
-        this.productList.push(product)
-        this.timesPushed++
+    totalProducts(): number {
+        return 0;
+    }
+
+    add(...product: ProductItem[]): void{
+        this.productList.push(...product)
     }
 }
 
