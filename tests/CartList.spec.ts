@@ -41,3 +41,23 @@ it('totalProducts should return zero when no products added', () => {
 
     expect(cart.totalProducts()).toBe(0)
 });
+
+it('totalProducts should return one when one product added', () => {
+    const cart = new CartList();
+    const booster = Product.fromString('TMNTBooster')
+    const boosterItem = new ProductItem(1, booster)
+    cart.add(boosterItem)
+
+    expect(cart.totalProducts()).toBe(1)
+});
+
+it('totalProducts should return two when two differents products added', () => {
+    const cart = new CartList();
+    const booster = Product.fromString('TMNTBooster')
+    const deckbox = Product.fromString('DeckBox')
+    const boosterItem = new ProductItem(1, booster)
+    const deckboxItem = new ProductItem(1, deckbox)
+    cart.add(boosterItem, deckboxItem)
+
+    expect(cart.totalProducts()).toBe(2)
+});

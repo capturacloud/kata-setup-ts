@@ -12,7 +12,7 @@ export class CartList{
     }
 
     totalProducts(): number {
-        return 0;
+        return this.productList.length;
     }
 
     add(...product: ProductItem[]): void{
