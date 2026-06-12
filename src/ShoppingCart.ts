@@ -23,19 +23,13 @@ export class ShoppingCart {
     }
 
     let productString: string = ''
-    let totalProducts: number = 0;
     let promoString = ('').padEnd(29);
 
-    if (this.voucher.discount === 5) {
-        promoString = ('5% descontado (PROMO_5)').padEnd(29);
-    }
-    if (this.voucher.discount === 10) {
-        promoString = ('10% descontado (PROMO_10)').padEnd(29);
+    if (this.voucher.discount > 0) {
+        promoString = (`${this.voucher.discount}% descontado (PROMO_${this.voucher.discount})`).padEnd(29);
     }
 
     for (const productItem of this.productsList.productList) {
-
-      totalProducts += productItem.quantity;
 
       const paddedName = productItem.product.name.padEnd(12, ' ');
       const paddedPrice = `${(productItem.product.price * productItem.quantity).toFixed(2)}€`.padEnd(14, ' ');
@@ -44,8 +38,7 @@ export class ShoppingCart {
         productString += ` | ${paddedName} | ${paddedPrice} | ${paddedQuantity} |\n`;
     }
 
-
-      const paddedTotalProducts = totalProducts.toString().padEnd(20, ' ');
+      const paddedTotalProducts = `${this.productsList.totalProducts()}`.padEnd(20, ' ');
       const paddedTotalPrice = `${(this.productsList.calculateTotalPrice() * (0.01 * (100 - this.voucher.discount))).toFixed(2)} €`.padEnd(26);
       return `
  --------------------------------------------
