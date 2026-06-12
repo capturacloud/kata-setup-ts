@@ -12,7 +12,12 @@ export class CartList{
     }
 
     totalProducts(): number {
-        return this.productList.length;
+        let quantity = 0;
+
+        for (const product of this.productList){
+             quantity += product.quantity
+        }
+        return quantity;
     }
 
     add(...product: ProductItem[]): void{

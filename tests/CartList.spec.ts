@@ -61,3 +61,12 @@ it('totalProducts should return two when two differents products added', () => {
 
     expect(cart.totalProducts()).toBe(2)
 });
+
+it('totalProducts should return two when two of the same product added', () => {
+    const cart = new CartList();
+    const booster = Product.fromString('TMNTBooster')
+    const boosterItem = new ProductItem(2, booster)
+    cart.add(boosterItem)
+
+    expect(cart.totalProducts()).toBe(2)
+});
